@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Eight Wonders Framing Probes: Testing Whether Language Models Represent Relational vs. Transactional Framing"
+version: 0.1.0
+date-released: 2026-10-17
+authors:
+  - family-names: Alejandro
+    given-names: Corey
+license: MIT
+keywords: [interpretability, linear-probes, ai-safety, epistemic-injustice, runtime-governance]
