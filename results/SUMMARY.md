@@ -31,8 +31,13 @@ Margin = log-odds of the adaptive reading over the theft-risk reading, averaged 
 | Qwen2.5-1.5B | 0/24 | 2.319 / 0.618 | -1.804 / 0.28 | 0.613 |
 | Qwen2.5-7B | 0/24 | -1.22 / -2.03 | -0.915 / 0.518 | 0.118 |
 
-Random-direction null (40 directions, v0.2.1): not yet run.
+### Random-direction null (v0.2.1)
 
+| Model | Random directions | Frontin' slope, framing dir | Random |slope| median / max | p (Frontin') | Neutral slope, framing dir | p (neutral) |
+|---|---|---|---|---|---|---|
+| Qwen2.5-0.5B | 40 | 1.5218 | 0.835 / 2.915 | 0.3171 | -0.2083 | 0.6341 |
+| Qwen2.5-1.5B | 40 | 2.3193 | 1.048 / 3.586 | 0.0732 | -1.8034 | 0.0244 |
+| Qwen2.5-7B | 40 | -1.2207 | 1.092 / 2.882 | 0.4634 | -0.9147 | 0.122 |
 
 ## Runtime monitor EW-FRAME-001
 
