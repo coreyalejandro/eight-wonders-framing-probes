@@ -1,0 +1,508 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "device": "mps",
+    "dtype": "torch.float16",
+    "n": 4096,
+    "torch": "2.14.1",
+    "seconds": 142.1
+  },
+  "n_prompts": 4096,
+  "n_template_pairs": 16,
+  "layers": {
+    "last_L1": {
+      "transfer_A_to_B": 0.5562,
+      "transfer_B_to_A": 0.6416,
+      "transfer_mean": 0.5989
+    },
+    "last_L2": {
+      "transfer_A_to_B": 0.6084,
+      "transfer_B_to_A": 0.6787,
+      "transfer_mean": 0.6436
+    },
+    "last_L3": {
+      "transfer_A_to_B": 0.666,
+      "transfer_B_to_A": 0.6689,
+      "transfer_mean": 0.6675
+    },
+    "last_L4": {
+      "transfer_A_to_B": 0.6909,
+      "transfer_B_to_A": 0.647,
+      "transfer_mean": 0.6689
+    },
+    "last_L5": {
+      "transfer_A_to_B": 0.6646,
+      "transfer_B_to_A": 0.6631,
+      "transfer_mean": 0.6638
+    },
+    "last_L6": {
+      "transfer_A_to_B": 0.6489,
+      "transfer_B_to_A": 0.6211,
+      "transfer_mean": 0.635
+    },
+    "last_L7": {
+      "transfer_A_to_B": 0.6689,
+      "transfer_B_to_A": 0.6387,
+      "transfer_mean": 0.6538
+    },
+    "last_L8": {
+      "transfer_A_to_B": 0.7061,
+      "transfer_B_to_A": 0.7075,
+      "transfer_mean": 0.7068
+    },
+    "last_L9": {
+      "transfer_A_to_B": 0.8037,
+      "transfer_B_to_A": 0.7974,
+      "transfer_mean": 0.8005
+    },
+    "last_L10": {
+      "transfer_A_to_B": 0.7598,
+      "transfer_B_to_A": 0.7798,
+      "transfer_mean": 0.7698
+    },
+    "last_L11": {
+      "transfer_A_to_B": 0.7993,
+      "transfer_B_to_A": 0.8174,
+      "transfer_mean": 0.8083
+    },
+    "last_L12": {
+      "transfer_A_to_B": 0.8159,
+      "transfer_B_to_A": 0.8105,
+      "transfer_mean": 0.8132
+    },
+    "last_L13": {
+      "transfer_A_to_B": 0.7476,
+      "transfer_B_to_A": 0.7852,
+      "transfer_mean": 0.7664
+    },
+    "last_L14": {
+      "transfer_A_to_B": 0.8008,
+      "transfer_B_to_A": 0.8291,
+      "transfer_mean": 0.8149
+    },
+    "last_L15": {
+      "transfer_A_to_B": 0.7593,
+      "transfer_B_to_A": 0.7959,
+      "transfer_mean": 0.7776
+    },
+    "last_L16": {
+      "transfer_A_to_B": 0.8555,
+      "transfer_B_to_A": 0.8403,
+      "transfer_mean": 0.8479
+    },
+    "last_L17": {
+      "transfer_A_to_B": 0.8154,
+      "transfer_B_to_A": 0.813,
+      "transfer_mean": 0.8142
+    },
+    "last_L18": {
+      "transfer_A_to_B": 0.8018,
+      "transfer_B_to_A": 0.7905,
+      "transfer_mean": 0.7961
+    },
+    "last_L19": {
+      "transfer_A_to_B": 0.7871,
+      "transfer_B_to_A": 0.7686,
+      "transfer_mean": 0.7778
+    },
+    "last_L20": {
+      "transfer_A_to_B": 0.7432,
+      "transfer_B_to_A": 0.7334,
+      "transfer_mean": 0.7383
+    },
+    "last_L21": {
+      "transfer_A_to_B": 0.7559,
+      "transfer_B_to_A": 0.7344,
+      "transfer_mean": 0.7451
+    },
+    "last_L22": {
+      "transfer_A_to_B": 0.7876,
+      "transfer_B_to_A": 0.7231,
+      "transfer_mean": 0.7554
+    },
+    "last_L23": {
+      "transfer_A_to_B": 0.7866,
+      "transfer_B_to_A": 0.7153,
+      "transfer_mean": 0.751
+    },
+    "last_L24": {
+      "transfer_A_to_B": 0.7954,
+      "transfer_B_to_A": 0.7148,
+      "transfer_mean": 0.7551
+    },
+    "last_L25": {
+      "transfer_A_to_B": 0.8115,
+      "transfer_B_to_A": 0.7202,
+      "transfer_mean": 0.7659
+    },
+    "last_L26": {
+      "transfer_A_to_B": 0.8042,
+      "transfer_B_to_A": 0.7188,
+      "transfer_mean": 0.7615
+    },
+    "last_L27": {
+      "transfer_A_to_B": 0.8188,
+      "transfer_B_to_A": 0.7388,
+      "transfer_mean": 0.7788
+    },
+    "last_L28": {
+      "transfer_A_to_B": 0.8569,
+      "transfer_B_to_A": 0.7852,
+      "transfer_mean": 0.821
+    },
+    "mean_L1": {
+      "transfer_A_to_B": 0.7334,
+      "transfer_B_to_A": 0.7139,
+      "transfer_mean": 0.7236
+    },
+    "mean_L2": {
+      "transfer_A_to_B": 0.5122,
+      "transfer_B_to_A": 0.5039,
+      "transfer_mean": 0.5081
+    },
+    "mean_L3": {
+      "transfer_A_to_B": 0.5044,
+      "transfer_B_to_A": 0.5015,
+      "transfer_mean": 0.5029
+    },
+    "mean_L4": {
+      "transfer_A_to_B": 0.5054,
+      "transfer_B_to_A": 0.5015,
+      "transfer_mean": 0.5034
+    },
+    "mean_L5": {
+      "transfer_A_to_B": 0.5122,
+      "transfer_B_to_A": 0.5044,
+      "transfer_mean": 0.5083
+    },
+    "mean_L6": {
+      "transfer_A_to_B": 0.5122,
+      "transfer_B_to_A": 0.5044,
+      "transfer_mean": 0.5083
+    },
+    "mean_L7": {
+      "transfer_A_to_B": 0.5166,
+      "transfer_B_to_A": 0.5059,
+      "transfer_mean": 0.5112
+    },
+    "mean_L8": {
+      "transfer_A_to_B": 0.5186,
+      "transfer_B_to_A": 0.5078,
+      "transfer_mean": 0.5132
+    },
+    "mean_L9": {
+      "transfer_A_to_B": 0.522,
+      "transfer_B_to_A": 0.5093,
+      "transfer_mean": 0.5156
+    },
+    "mean_L10": {
+      "transfer_A_to_B": 0.522,
+      "transfer_B_to_A": 0.5093,
+      "transfer_mean": 0.5156
+    },
+    "mean_L11": {
+      "transfer_A_to_B": 0.5244,
+      "transfer_B_to_A": 0.5098,
+      "transfer_mean": 0.5171
+    },
+    "mean_L12": {
+      "transfer_A_to_B": 0.5249,
+      "transfer_B_to_A": 0.5103,
+      "transfer_mean": 0.5176
+    },
+    "mean_L13": {
+      "transfer_A_to_B": 0.5254,
+      "transfer_B_to_A": 0.5098,
+      "transfer_mean": 0.5176
+    },
+    "mean_L14": {
+      "transfer_A_to_B": 0.5293,
+      "transfer_B_to_A": 0.5088,
+      "transfer_mean": 0.519
+    },
+    "mean_L15": {
+      "transfer_A_to_B": 0.5269,
+      "transfer_B_to_A": 0.5117,
+      "transfer_mean": 0.5193
+    },
+    "mean_L16": {
+      "transfer_A_to_B": 0.5337,
+      "transfer_B_to_A": 0.5112,
+      "transfer_mean": 0.5225
+    },
+    "mean_L17": {
+      "transfer_A_to_B": 0.5347,
+      "transfer_B_to_A": 0.5103,
+      "transfer_mean": 0.5225
+    },
+    "mean_L18": {
+      "transfer_A_to_B": 0.5371,
+      "transfer_B_to_A": 0.5122,
+      "transfer_mean": 0.5247
+    },
+    "mean_L19": {
+      "transfer_A_to_B": 0.5391,
+      "transfer_B_to_A": 0.5137,
+      "transfer_mean": 0.5264
+    },
+    "mean_L20": {
+      "transfer_A_to_B": 0.5469,
+      "transfer_B_to_A": 0.5137,
+      "transfer_mean": 0.5303
+    },
+    "mean_L21": {
+      "transfer_A_to_B": 0.5474,
+      "transfer_B_to_A": 0.522,
+      "transfer_mean": 0.5347
+    },
+    "mean_L22": {
+      "transfer_A_to_B": 0.5488,
+      "transfer_B_to_A": 0.5244,
+      "transfer_mean": 0.5366
+    },
+    "mean_L23": {
+      "transfer_A_to_B": 0.5679,
+      "transfer_B_to_A": 0.5322,
+      "transfer_mean": 0.55
+    },
+    "mean_L24": {
+      "transfer_A_to_B": 0.5981,
+      "transfer_B_to_A": 0.5386,
+      "transfer_mean": 0.5684
+    },
+    "mean_L25": {
+      "transfer_A_to_B": 0.6265,
+      "transfer_B_to_A": 0.5493,
+      "transfer_mean": 0.5879
+    },
+    "mean_L26": {
+      "transfer_A_to_B": 0.6294,
+      "transfer_B_to_A": 0.5649,
+      "transfer_mean": 0.5972
+    },
+    "mean_L27": {
+      "transfer_A_to_B": 0.6963,
+      "transfer_B_to_A": 0.647,
+      "transfer_mean": 0.6716
+    },
+    "mean_L28": {
+      "transfer_A_to_B": 0.6777,
+      "transfer_B_to_A": 0.6406,
+      "transfer_mean": 0.6592
+    }
+  },
+  "best": {
+    "pool": "last",
+    "layer": 16,
+    "transfer_mean": 0.8479,
+    "maxstat_perm_p": 0.001,
+    "maxstat_null_mean": 0.5628,
+    "maxstat_null_95pct": 0.6633,
+    "n_perms": 1000,
+    "n_configs_searched": 56,
+    "perm_unit": "template pair",
+    "per_template_pair_accuracy": {
+      "A1": 0.9062,
+      "A2": 0.7578,
+      "A3": 0.8594,
+      "A4": 1.0,
+      "A5": 0.8945,
+      "A6": 0.9961,
+      "A7": 0.6914,
+      "A8": 0.6172,
+      "B1": 0.7773,
+      "B2": 0.6875,
+      "B3": 0.9453,
+      "B4": 0.9805,
+      "B5": 0.7891,
+      "B6": 0.9492,
+      "B7": 0.9922,
+      "B8": 0.7227
+    },
+    "template_pairs_above_chance": 16,
+    "n_template_pairs_tested": 16,
+    "template_ttest_p_uncorrected": 0.0,
+    "logistic_probe_at_best": {
+      "within_A": 1.0,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.9868,
+      "transfer_B_to_A": 0.9722
+    }
+  },
+  "wonders": {
+    "order": [
+      "I1_Trust",
+      "I2_Authenticity",
+      "I3_Status",
+      "I4_Identity",
+      "I5_EnactedFidelity",
+      "I6_Quality",
+      "I7_ContextualPerf",
+      "I8_Narrative"
+    ],
+    "direction_cosine": [
+      [
+        1.0,
+        0.974,
+        0.961,
+        0.981,
+        0.968,
+        0.965,
+        0.957,
+        0.971
+      ],
+      [
+        0.974,
+        1.0,
+        0.965,
+        0.971,
+        0.957,
+        0.97,
+        0.969,
+        0.983
+      ],
+      [
+        0.961,
+        0.965,
+        1.0,
+        0.977,
+        0.964,
+        0.975,
+        0.97,
+        0.965
+      ],
+      [
+        0.981,
+        0.971,
+        0.977,
+        1.0,
+        0.98,
+        0.97,
+        0.962,
+        0.974
+      ],
+      [
+        0.968,
+        0.957,
+        0.964,
+        0.98,
+        1.0,
+        0.959,
+        0.946,
+        0.97
+      ],
+      [
+        0.965,
+        0.97,
+        0.975,
+        0.97,
+        0.959,
+        1.0,
+        0.987,
+        0.959
+      ],
+      [
+        0.957,
+        0.969,
+        0.97,
+        0.962,
+        0.946,
+        0.987,
+        1.0,
+        0.958
+      ],
+      [
+        0.971,
+        0.983,
+        0.965,
+        0.974,
+        0.97,
+        0.959,
+        0.958,
+        1.0
+      ]
+    ],
+    "cross_wonder_transfer_A_to_B": [
+      [
+        0.812,
+        0.855,
+        0.852,
+        0.875,
+        0.863,
+        0.852,
+        0.832,
+        0.82
+      ],
+      [
+        0.812,
+        0.859,
+        0.848,
+        0.867,
+        0.867,
+        0.848,
+        0.844,
+        0.812
+      ],
+      [
+        0.828,
+        0.863,
+        0.867,
+        0.879,
+        0.879,
+        0.84,
+        0.84,
+        0.816
+      ],
+      [
+        0.816,
+        0.844,
+        0.852,
+        0.883,
+        0.863,
+        0.84,
+        0.848,
+        0.812
+      ],
+      [
+        0.805,
+        0.816,
+        0.84,
+        0.867,
+        0.859,
+        0.809,
+        0.816,
+        0.789
+      ],
+      [
+        0.828,
+        0.867,
+        0.852,
+        0.891,
+        0.871,
+        0.863,
+        0.84,
+        0.828
+      ],
+      [
+        0.848,
+        0.902,
+        0.879,
+        0.898,
+        0.883,
+        0.895,
+        0.859,
+        0.832
+      ],
+      [
+        0.855,
+        0.918,
+        0.898,
+        0.898,
+        0.891,
+        0.898,
+        0.883,
+        0.883
+      ]
+    ]
+  }
+}

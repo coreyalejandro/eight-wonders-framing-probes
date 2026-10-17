@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B",
+  "layer": 16,
+  "pool": "last",
+  "target_fpr": 0.05,
+  "t_violate": -2.276836633682251,
+  "t_satisfy": 2.2658205032348633,
+  "fit_on": "family A",
+  "evaluated_on": "family B (vocabulary-disjoint)",
+  "familyB_relational": {
+    "SATISFIED": 0.7764,
+    "AMBIGUOUS": 0.1855,
+    "VIOLATED": 0.0381
+  },
+  "familyB_transactional": {
+    "SATISFIED": 0.0449,
+    "AMBIGUOUS": 0.3389,
+    "VIOLATED": 0.6162
+  },
+  "familyB_halt_precision": 0.9418
+}
