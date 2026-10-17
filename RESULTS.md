@@ -35,20 +35,74 @@ The v2 probe accuracy cannot be attributed to a representation of framing.
 
 The full pipeline on an untrained (randomly initialized) model: best transfer 0.533, max-statistic p ≈ 0.07, not significant. The test does not pass without learned structure.
 
-## 5. Real-model probe results
+## 5. Real-model probe results (Qwen2.5, run on Apple Silicon, 2026-10-17)
 
-Pending: `scripts/run_full_mac.sh`.
+Full generated tables: [`results/SUMMARY.md`](results/SUMMARY.md) (`scripts/summarize.py`).
+
+| Model | Cross-family transfer | Max-stat null 95th pct | p | Template pairs above chance |
+|---|---|---|---|---|
+| Qwen2.5-0.5B | **0.812** (layer 13) | 0.6558 | 0.001 | 16/16 |
+| Qwen2.5-1.5B | **0.8479** (layer 16) | 0.6633 | 0.001 | 16/16 |
+| Qwen2.5-7B | **0.9209** (layer 18) | 0.6905 | 0.001 | 16/16 |
+| untrained control | 0.5327 | 0.5349 | 0.0649 | 12/16 |
+
+**Finding.** In all three pretrained models, a direction learned from one vocabulary family separates relational from
+transactional framing in the other family, far above the corrected chance level (p = 0.001, the floor for 1,000
+permutations), on every one of the 16 template pairs. The effect grows with model size (0.81 → 0.85 → 0.92). An
+untrained model with the same architecture does not pass. Word counting on the same split scores 0.44–0.47.
+
+**What this means precisely.** The scenario text is identical across frames; only the surrounding question changes.
+So the models encode *whether a situation is being framed relationally or transactionally*, in a form that does not
+depend on specific words. It does not yet show that the models read the scenarios themselves relationally or
+transactionally without a framing cue.
+
+**One direction or eight?** Directions fit separately for each Wonder are nearly parallel (mean cosine 0.94–0.97), and
+a probe fit on one Wonder transfers to the others (mean 0.83–0.93). This is consistent with one shared framing direction,
+but it is not decisive: all Wonders share the same frame templates, which would also make their directions similar.
 
 ## 6. Steering (causal test)
 
-Design: for 24 Frontin' vignettes, a forced choice between an adaptive reading ("protecting themselves from being treated as a suspect") and a theft-risk reading, asked in both option orders. Add α × (framing direction) to the residual stream at the probe's layer, α ∈ {−0.5 … 0.5} × the mean residual norm. Controls: a random direction of equal norm, an off-target question on 12 neutral vignettes, and fluency (NLL on neutral text). At α = 0, the fraction of theft-risk readings measures the misreading AHI predicts. Real-model results pending.
+Design: for 24 Frontin' vignettes, a forced choice between an adaptive reading ("protecting themselves from being treated
+as a suspect") and a theft-risk reading, asked in both option orders. α × (framing direction) is added to the residual
+stream at the probe's layer, α ∈ {−0.5 … 0.5} × the mean residual norm. Controls: a random direction of equal norm, an
+off-target question on 12 neutral vignettes, and fluency (NLL on neutral text).
+
+**Base rate.** Unsteered, no model chose the theft-risk reading for any of the 24 vignettes (0/24 for all three). In this
+explicit forced-choice format, the misreading AHI predicts did not appear.
+
+**Steering result (v0.2.0): inconclusive.** Pushing along the framing direction moved the Frontin' answers more than one
+random direction did for 0.5B and 1.5B, but less for 7B, and it also moved the unrelated neutral question (for 1.5B
+nearly as much). No setting flipped any answer to the theft-risk reading. With a single random direction there is no
+null distribution, so v0.2.1 compares the framing direction against 40 random directions (`scripts/run_steer_null_mac.sh`).
+Until that runs, no causal claim is made.
 
 ## 7. Runtime monitor (TLC invariant EW-FRAME-001)
 
-Direction and thresholds are fit on family A (≤5% false-flag target); performance is reported on vocabulary-disjoint family B. The invariant applies only when the upstream Narrative invariant marks the context as relational; otherwise it returns NOT_APPLICABLE. On VIOLATED it issues a blocking HALT; on AMBIGUOUS, a non-blocking PROMPT_USER. Every decision is appended to a SHA-256 hash-chained evidence log, and tests confirm tampering is detected. Real-model calibration pending.
+Direction and thresholds are fit on family A (5% false-flag target) and tested on vocabulary-disjoint family B.
+
+| Model | Relational prompts passed (SATISFIED) | Transactional prompts flagged (VIOLATED) | HALT precision |
+|---|---|---|---|
+| Qwen2.5-0.5B | 0.4609 | 0.5176 | 0.9743 |
+| Qwen2.5-1.5B | 0.7764 | 0.6162 | 0.9418 |
+| Qwen2.5-7B | 0.9346 | 0.9189 | 0.9429 |
+
+On the 7B model the monitor sorts held-out framings correctly about 92–93% of the time, and when it halts it is right
+about 94% of the time. Smaller models leave many cases AMBIGUOUS, which triggers the non-blocking PROMPT_USER repair
+rather than a halt. The neutral vignettes were correctly gated out (NOT_APPLICABLE) for every model, and every
+evidence chain verified as intact.
+
+On the 24 Frontin' vignettes the 7B monitor returned 22 SATISFIED and 2 VIOLATED. Those vignettes have no ground-truth
+labels for the model's internal reading, and the model's explicit answers never chose the theft reading, so the 2 halts
+cannot yet be called correct or false. That needs a labelled Frontin' set.
 
 ## V&T
 
-- **EXISTS:** v4 dataset, lexical controls, probe/steering/monitor pipeline, 12 passing tests, smoke run on an untrained model.
-- **VERIFIED AGAINST:** fresh-clone `make reproduce`, 2026-10-17.
-- **NOT CLAIMED:** any result about what pretrained models represent or how steering affects them. That awaits sections 5–7.
+- **EXISTS:** v4 dataset, lexical controls, probe/steering/monitor pipeline, 15 passing tests, real-model results for
+  Qwen2.5 0.5B, 1.5B and 7B (probes, steering, monitor calibration and demo, hash-chained evidence logs).
+- **VERIFIED AGAINST:** fresh-clone `make reproduce`; GitHub Actions on the results commit; numbers above checked by
+  Claude against `results/*.json` (2026-10-17) and enforced by `tests/test_results_consistency.py`.
+- **CLAIMED:** pretrained Qwen2.5 models linearly encode relational vs. transactional framing in a word-independent form,
+  increasing with scale; a monitor built on it classifies held-out framings at 92–93% (7B).
+- **NOT CLAIMED:** that steering along the direction causally changes how models read Frontin' (inconclusive, v0.2.1
+  pending); that the models misread Frontin' as theft (0/24 in forced choice); that there is exactly one framing direction
+  rather than eight; any result beyond Qwen2.5.

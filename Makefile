@@ -29,7 +29,7 @@ test:
 smoke:
 	$(BIN)/python -m src.extract --model tiny-random --out results/acts_tiny.npz --batch 128
 	$(BIN)/python -m src.probes --acts results/acts_tiny.npz --tag tiny --perms 1000
-	$(BIN)/python -m src.steer --model tiny-random --acts results/acts_tiny.npz --probe-results results/probe_results_tiny.json --tag tiny
+	$(BIN)/python -m src.steer --model tiny-random --acts results/acts_tiny.npz --probe-results results/probe_results_tiny.json --tag tiny --n-random 5
 	$(BIN)/python -m src.monitor calibrate --acts results/acts_tiny.npz --probe-results results/probe_results_tiny.json --tag tiny
 	rm -f results/evidence_tiny.jsonl
 	$(BIN)/python -m src.monitor run --model tiny-random --config results/monitor_tiny.json --vignettes --evidence results/evidence_tiny.jsonl > results/monitor_demo_tiny.txt

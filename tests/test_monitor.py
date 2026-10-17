@@ -36,9 +36,11 @@ def test_steer_and_monitor_smoke(tmp_path):
     subprocess.check_call([py, "-m", "src.probes", "--acts", str(acts), "--tag", "t", "--perms", "5", "--outdir", str(tmp_path)])
     pr = str(tmp_path / "probe_results_t.json")
     subprocess.check_call([py, "-m", "src.steer", "--model", "tiny-random", "--acts", str(acts), "--probe-results", pr,
-                           "--tag", "t", "--outdir", str(tmp_path), "--alphas=-0.5,0,0.5"])
+                           "--tag", "t", "--outdir", str(tmp_path), "--alphas=-0.5,0,0.5", "--n-random", "3"])
     s = json.load(open(tmp_path / "steering_t.json"))
     assert set(s["conditions"]) == {"probe_direction", "random_direction"}
+    rn = s["random_null"]
+    assert len(rn["random_frontin_slopes"]) == 3 and 0 < rn["frontin_p_two_sided"] <= 1
     subprocess.check_call([py, "-m", "src.monitor", "calibrate", "--acts", str(acts), "--probe-results", pr, "--tag", "t", "--outdir", str(tmp_path)])
     out = subprocess.check_output([py, "-m", "src.monitor", "run", "--model", "tiny-random", "--config", str(tmp_path / "monitor_t.json"),
                                    "--vignettes", "--evidence", str(tmp_path / "ev.jsonl")], text=True)

@@ -80,6 +80,7 @@ def main():
     ap.add_argument("--probe-results", required=True); ap.add_argument("--tag", required=True)
     ap.add_argument("--data", default="data/prompts_v4.jsonl"); ap.add_argument("--outdir", default="results")
     ap.add_argument("--alphas", default="-0.5,-0.25,-0.1,0,0.1,0.25,0.5")
+    ap.add_argument("--n-random", type=int, default=40, help="random directions for the local-slope null (v0.2.1)")
     a = ap.parse_args()
     best = json.load(open(a.probe_results))["best"]; L = best["layer"]
     device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
@@ -103,6 +104,29 @@ def main():
             if al == 0: res["frontin_margins_alpha0"] = [round(x, 4) for x in fm]
             print(cname, al, res["frontin_margin"][-1], flush=True)
         out["conditions"][cname] = res
+    # v0.2.1: null distribution of local slopes (alpha = -0.1 vs +0.1) over many random directions
+    def local(vec):
+        fm, nm = [], []
+        for al in (-0.1, 0.1):
+            st.set(torch.tensor(vec * al * rnorm, dtype=torch.float32, device=model.device))
+            fm.append(np.mean([choice_margin(model, tok, v["text"], "frontin", ids) for v in V if v["kind"] == "frontin"]))
+            nm.append(np.mean([choice_margin(model, tok, v["text"], "neutral", ids) for v in V if v["kind"] == "neutral"]))
+        return float((fm[1] - fm[0]) / 0.2), float((nm[1] - nm[0]) / 0.2)
+    pf, pn = local(d)
+    rf, rn = [], []
+    for k in range(a.n_random):
+        rk = np.random.default_rng(1000 + k).standard_normal(d.shape); rk /= np.linalg.norm(rk)
+        f_, n_ = local(rk); rf.append(f_); rn.append(n_)
+        print("random", k, round(f_, 3), flush=True)
+    rf, rn = np.array(rf), np.array(rn)
+    out["random_null"] = {
+        "n_random_directions": a.n_random, "seeds": f"1000..{999 + a.n_random}",
+        "probe_frontin_slope": round(pf, 4), "probe_neutral_slope": round(pn, 4),
+        "random_frontin_slopes": [round(x, 4) for x in rf], "random_neutral_slopes": [round(x, 4) for x in rn],
+        "frontin_p_two_sided": round(float((1 + (np.abs(rf) >= abs(pf)).sum()) / (1 + len(rf))), 4) if len(rf) else None,
+        "neutral_p_two_sided": round(float((1 + (np.abs(rn) >= abs(pn)).sum()) / (1 + len(rn))), 4) if len(rn) else None,
+        "note": "p = share of random unit directions (same norm) whose |local slope| is at least the framing direction's; smallest possible p = 1/(n+1).",
+    }
     st.set(None); st.remove()
     json.dump(out, open(f"{a.outdir}/steering_{a.tag}.json", "w"), indent=2)
     try:

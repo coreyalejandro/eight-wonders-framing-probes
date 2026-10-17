@@ -6,7 +6,7 @@ This is the empirical layer of the research program on **Algorithmic Hermeneutic
 
 Research loop: problem (AHI, from lived and narrative experience) → research (this repo) → paper → runtime monitor in TLC.
 
-## Status (2026-10-17, v0.2.0)
+## Status (2026-10-17, v0.2.1)
 
 | Stage | Status |
 |---|---|
@@ -15,9 +15,9 @@ Research loop: problem (AHI, from lived and narrative experience) → research (
 | Lexical controls on v4 | Done: word-counter transfer across families 44–47% (chance) |
 | Statistics corrected for template dependence and layer selection | Done: max-statistic permutation test over template pairs |
 | Negative control (untrained model) | Done: not significant (p ≈ 0.07) |
-| Steering test on Frontin' vignettes | Built and smoke-tested; real-model run pending |
-| TLC runtime monitor (ConstitutionalInvariant `EW-FRAME-001`) | Built and smoke-tested; real-model calibration pending |
-| Real-model runs (Qwen2.5 0.5B / 1.5B / 7B) | Pending: `scripts/run_full_mac.sh` |
+| Real-model probes (Qwen2.5 0.5B / 1.5B / 7B) | Done: cross-family transfer 0.81 / 0.85 / 0.92, p = 0.001, 16/16 template pairs; see RESULTS.md |
+| Steering test on Frontin' vignettes | Run: inconclusive with one random direction; 40-direction null added in v0.2.1, run pending |
+| TLC runtime monitor (ConstitutionalInvariant `EW-FRAME-001`) | Calibrated: 7B sorts held-out framings 92–93% correctly, HALT precision 0.94; evidence chains intact |
 
 ## The research loop
 
