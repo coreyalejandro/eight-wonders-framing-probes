@@ -2,3 +2,4 @@
 __pycache__/
 results/acts_*.npz
 .pytest_cache/
+results/junit.xml

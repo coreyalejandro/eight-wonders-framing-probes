@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-10-17T09:16:00+00:00",
+  "git_commit": "a637238f134a57400f783456227a85139ed12538",
+  "git_dirty": true,
+  "python": "3.13.16",
+  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+  "seeds": {
+    "permutation_null": 0,
+    "tiny_random_model": 0
+  },
+  "files": {
+    "data/prompts_v2.csv": "edc39cd168ba9523d9324b1bfa7946f83ccaff94ce5654f7f1c3a4091c59bf49",
+    "data/prompts_v3.jsonl": "f59833c7bb5bb0d2f3c8cd785aadda367e045f97668fdf6ba4055a506152beec",
+    "requirements.txt": "2871d996c8c70b6a1e968a5aee6d0fa3850f832d39b878c0a595aaa1ecfa1032",
+    "results/acts_tiny.npz": "1b8fbbe66f802ed9bc96d397f6416f8036614032b7b2b76cd5f12b360d6cb8eb",
+    "results/lexical_baseline.json": "439c135c1a990ebf53d7fd2940327d927ff4004dd25704ebfbb8fe4973b73814",
+    "results/probe_results_tiny.json": "2ee2db71fbbe93965f364bafc170c4489875d355cccf0bec4b52d82e7fd649ec",
+    "results/probe_tiny.png": "51569fd6b3d6c7c49d5e02910277faecfc82598c6edfddb72c348d4e64eafc3c"
+  }
+}

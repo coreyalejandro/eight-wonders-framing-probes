@@ -39,7 +39,7 @@ def transfer(X, y, fam):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--acts", required=True); ap.add_argument("--data", default="data/prompts_v3.jsonl")
-    ap.add_argument("--tag", required=True); ap.add_argument("--perms", type=int, default=200)
+    ap.add_argument("--tag", required=True); ap.add_argument("--outdir", default="results"); ap.add_argument("--perms", type=int, default=200)
     a = ap.parse_args()
     z, rows, meta = load(a.acts, a.data)
     y = np.array([r["label"] for r in rows]); g = np.array([r["scenario_id"] for r in rows])
@@ -79,7 +79,7 @@ def main():
     xw = [[round(float(clf().fit(X[(won == i) & (fam == "A")], y[(won == i) & (fam == "A")])
                          .score(X[(won == j) & (fam == "B")], y[(won == j) & (fam == "B")])), 3) for j in W] for i in W]
     out["wonders"] = {"order": W, "direction_cosine": cos, "cross_wonder_transfer_A_to_B": xw}
-    json.dump(out, open(f"results/probe_results_{a.tag}.json", "w"), indent=2)
+    json.dump(out, open(f"{a.outdir}/probe_results_{a.tag}.json", "w"), indent=2)
     try:
         import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
         fig, ax = plt.subplots(1, 2, figsize=(11, 4))
@@ -93,7 +93,7 @@ def main():
         ax[0].set_title(f"{meta['model']}"); ax[0].legend(fontsize=7)
         im = ax[1].imshow(xw, vmin=.5, vmax=1, cmap="viridis"); ax[1].set_xticks(range(len(W)), [w.split('_')[0] for w in W]); ax[1].set_yticks(range(len(W)), [w.split('_')[0] for w in W])
         ax[1].set_xlabel("test Wonder (family B)"); ax[1].set_ylabel("train Wonder (family A)"); ax[1].set_title(f"cross-Wonder transfer, {pool} L{L+1}")
-        fig.colorbar(im, ax=ax[1]); fig.tight_layout(); fig.savefig(f"results/probe_{a.tag}.png", dpi=130)
+        fig.colorbar(im, ax=ax[1]); fig.tight_layout(); fig.savefig(f"{a.outdir}/probe_{a.tag}.png", dpi=130)
     except Exception as e:
         print("plot skipped:", e)
     print(json.dumps(out["best"], indent=2))

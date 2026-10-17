@@ -5,7 +5,7 @@
     "dtype": "torch.float32",
     "n": 1536,
     "torch": "2.14.1+cu130",
-    "seconds": 1.8
+    "seconds": 2.4
   },
   "n_prompts": 1536,
   "layers": {

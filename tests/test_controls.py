@@ -10,6 +10,6 @@ def test_lexical_transfer_is_chance():
 def test_pipeline_smoke_untrained_model_does_not_transfer(tmp_path):
     acts = tmp_path / "a.npz"
     subprocess.check_call([sys.executable, "-m", "src.extract", "--model", "tiny-random", "--out", str(acts), "--batch", "64"])
-    subprocess.check_call([sys.executable, "-m", "src.probes", "--acts", str(acts), "--tag", "pytest_tiny", "--perms", "20"])
-    r = json.load(open("results/probe_results_pytest_tiny.json"))
+    subprocess.check_call([sys.executable, "-m", "src.probes", "--acts", str(acts), "--tag", "pytest_tiny", "--perms", "20", "--outdir", str(tmp_path)])
+    r = json.load(open(tmp_path / "probe_results_pytest_tiny.json"))
     assert r["best"]["transfer_mean"] < 0.6   # negative control: untrained model cannot pass the test
