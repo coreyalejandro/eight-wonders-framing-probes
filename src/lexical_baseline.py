@@ -31,20 +31,20 @@ def transfer(tr, te, kind):
     m = LogisticRegression(max_iter=5000).fit(Ftr, [r["label"] for r in tr])
     return round(float(m.score(Fte, [r["label"] for r in te])), 4)
 
-def main(v2="data/prompts_v2.csv", v3="data/prompts_v3.jsonl"):
-    out = {"v2": {}, "v3": {}}
+def main(v2="data/prompts_v2.csv", v3="data/prompts_v4.jsonl"):
+    out = {"v2": {}, "v4": {}}
     r2 = v2_rows(v2)
     for k in ("bow", "length"):
         out["v2"][f"{k}_heldout"] = cv([r["text"] for r in r2], [r["label"] for r in r2], [r["scenario_id"] for r in r2], k)
-    r3 = load(v3)
+    r4 = load(v3)
     for fam in "AB":
-        rr = [r for r in r3 if r["family"] == fam]
+        rr = [r for r in r4 if r["family"] == fam]
         for k in ("bow", "length"):
-            out["v3"][f"{k}_within_{fam}"] = cv([r["text"] for r in rr], [r["label"] for r in rr], [r["scenario_id"] for r in rr], k)
-    A = [r for r in r3 if r["family"] == "A"]; B = [r for r in r3 if r["family"] == "B"]
+            out["v4"][f"{k}_within_{fam}"] = cv([r["text"] for r in rr], [r["label"] for r in rr], [r["scenario_id"] for r in rr], k)
+    A = [r for r in r4 if r["family"] == "A"]; B = [r for r in r4 if r["family"] == "B"]
     for k in ("bow", "length"):
-        out["v3"][f"{k}_transfer_A_to_B"] = transfer(A, B, k)
-        out["v3"][f"{k}_transfer_B_to_A"] = transfer(B, A, k)
+        out["v4"][f"{k}_transfer_A_to_B"] = transfer(A, B, k)
+        out["v4"][f"{k}_transfer_B_to_A"] = transfer(B, A, k)
     print(json.dumps(out, indent=2))
 
 if __name__ == "__main__":

@@ -10,7 +10,7 @@ jobs:
       - name: Dataset, lexical controls, tests, smoke run, provenance
         run: make reproduce
       - name: Fail if the controlled dataset or controls drift
-        run: git diff --exit-code -- data/prompts_v3.jsonl results/lexical_baseline.json
+        run: git diff --exit-code -- data/prompts_v4.jsonl results/lexical_baseline.json
       - uses: actions/upload-artifact@v4
         if: always()
         with: { name: results, path: results/ }

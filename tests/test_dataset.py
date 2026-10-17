@@ -16,13 +16,13 @@ def test_frames_length_matched():
 
 def test_dataset_complete_and_deterministic():
     a, b = build("data/prompts_v2.csv"), build("data/prompts_v2.csv")
-    assert a == b and len(a) == 1536
+    assert a == b and len(a) == 4096
     per = {}
     for r in a: per.setdefault(r["scenario_id"], []).append(r)
-    assert len(per) == 128 and all(len(v) == 12 for v in per.values())
+    assert len(per) == 128 and all(len(v) == 32 for v in per.values())
     for v in per.values():
         assert len({r["scenario"] for r in v}) == 1  # identical scenario across framings
 
 def test_committed_dataset_matches_builder():
-    rows = [json.loads(l) for l in open("data/prompts_v3.jsonl", encoding="utf-8")]
+    rows = [json.loads(l) for l in open("data/prompts_v4.jsonl", encoding="utf-8")]
     assert rows == build("data/prompts_v2.csv")

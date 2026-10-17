@@ -9,10 +9,10 @@
       0.0897
     ]
   },
-  "v3": {
+  "v4": {
     "bow_within_A": [
-      1.0,
-      0.0
+      0.9961,
+      0.0103
     ],
     "length_within_A": [
       0.5,
@@ -26,8 +26,8 @@
       0.5,
       0.0
     ],
-    "bow_transfer_A_to_B": 0.4688,
-    "bow_transfer_B_to_A": 0.4922,
+    "bow_transfer_A_to_B": 0.4385,
+    "bow_transfer_B_to_A": 0.4663,
     "length_transfer_A_to_B": 0.5,
     "length_transfer_B_to_A": 0.5
   }
