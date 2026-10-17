@@ -25,9 +25,17 @@ def load(model_id, device, dtype):
         from transformers import Qwen2Config, Qwen2ForCausalLM, PreTrainedTokenizerFast
         from tokenizers import Tokenizer, models, pre_tokenizers, trainers
         torch.manual_seed(0)
-        rows = [json.loads(l) for l in open("data/prompts_v3.jsonl", encoding="utf-8")]
+        rows = [json.loads(l) for l in open("data/prompts_v4.jsonl", encoding="utf-8")]
         t = Tokenizer(models.WordLevel(unk_token="[UNK]")); t.pre_tokenizer = pre_tokenizers.Whitespace()
-        t.train_from_iterator([r["text"] for r in rows], trainers.WordLevelTrainer(special_tokens=["[UNK]", "[PAD]"]))
+        extra = []
+        for p in ("data/frontin_vignettes.jsonl",):
+            try: extra += [json.loads(l)["text"] for l in open(p, encoding="utf-8")]
+            except FileNotFoundError: pass
+        try:
+            from src.steer import QUESTIONS
+            extra += [q for qs in QUESTIONS.values() for q in qs] + ["A", "B", "( A B )"]
+        except Exception: pass
+        t.train_from_iterator([r["text"] for r in rows] + extra, trainers.WordLevelTrainer(special_tokens=["[UNK]", "[PAD]"]))
         tok = PreTrainedTokenizerFast(tokenizer_object=t, unk_token="[UNK]", pad_token="[PAD]")
         cfg = Qwen2Config(vocab_size=t.get_vocab_size(), hidden_size=64, intermediate_size=128, num_hidden_layers=4,
                           num_attention_heads=4, num_key_value_heads=2, max_position_embeddings=512)
@@ -39,7 +47,7 @@ def load(model_id, device, dtype):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--model", required=True); ap.add_argument("--data", default="data/prompts_v3.jsonl")
+    ap.add_argument("--model", required=True); ap.add_argument("--data", default="data/prompts_v4.jsonl")
     ap.add_argument("--out", required=True); ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--limit", type=int, default=0)
     a = ap.parse_args()

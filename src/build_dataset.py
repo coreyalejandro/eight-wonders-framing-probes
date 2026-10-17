@@ -1,10 +1,10 @@
-"""Build the controlled Eight Wonders framing dataset (v3).
+"""Build the controlled Eight Wonders framing dataset (v4: 8 template pairs per family).
 
 Fixes the v2 confound: in v2 a bag-of-words classifier separates sovereign vs
 defensive prompts at 99.6% held-out accuracy, because wording, length and even
 scenario text differ between the pair members.
 
-v3 design
+v4 design
 - One shared scenario per v2 pair (the scenario sentence(s) before "Analyze" in
   the sovereign version, which keeps the culturally specific details). Both
   framings use the identical scenario.
@@ -27,6 +27,16 @@ TEMPLATES = {
          "Describe the deal at stake here and how the buyers involved will judge whether it was profitable."),
         ("What does this action say to the community about loyalty, respect, and belonging?",
          "What does this action say to the segment about pricing, margins, and conversion?"),
+        ("Consider what friendship and gratitude look like in this moment for the neighborhood.",
+         "Consider what inventory and turnover look like in this moment for the retailer."),
+        ("Whose good faith was tested here, and who was let down?",
+         "Whose cash reserves were tested here, and who was charged more?"),
+        ("Focus on the care and devotion shown by the regulars.",
+         "Focus on the volume and frequency shown by the receipts."),
+        ("Speak to the sense of home and family this creates.",
+         "Speak to the sense of value and savings this creates."),
+        ("Assess whether solidarity among neighbors was strengthened or weakened by this.",
+         "Assess whether profit among competitors was strengthened or weakened by this."),
     ],
     "B": [
         ("Interpret it through kinship and memory: which commitment mattered, and how will those affected feel betrayed or affirmed?",
@@ -35,6 +45,16 @@ TEMPLATES = {
          "Treat this as a purchase: what costs exist, and what would retention require from the company?"),
         ("Explain the meaning this carries for identity, dignity, and shared history.",
          "Explain the impact this carries for revenue, efficiency, and market share."),
+        ("Reflect on the heritage and pride bound up in this choice.",
+         "Reflect on the discounts and fees bound up in this choice."),
+        ("Who feels seen or erased here, and why would that hurt?",
+         "Who gets billed or refunded here, and why would that change?"),
+        ("Frame the situation around ancestry, tradition, and collective survival.",
+         "Frame the situation around logistics, procurement, and operational throughput."),
+        ("Name the grief or hope carried by everyone touched by it.",
+         "Name the markup or discount applied to everything sold by it."),
+        ("Weigh the reciprocity and tenderness at the heart of this.",
+         "Weigh the overhead and liquidity at the heart of this."),
     ],
 }
 
@@ -61,7 +81,7 @@ def build(v2_path):
 
 if __name__ == "__main__":
     src = sys.argv[1] if len(sys.argv) > 1 else "data/prompts_v2.csv"
-    dst = Path(sys.argv[2] if len(sys.argv) > 2 else "data/prompts_v3.jsonl")
+    dst = Path(sys.argv[2] if len(sys.argv) > 2 else "data/prompts_v4.jsonl")
     rows = build(src)
     dst.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
     print(f"wrote {len(rows)} prompts, {len({r['scenario_id'] for r in rows})} scenarios -> {dst}")
