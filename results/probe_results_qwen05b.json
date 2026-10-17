@@ -1,0 +1,534 @@
+{
+  "meta": {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "device": "mps",
+    "dtype": "torch.float16",
+    "n": 1536,
+    "torch": "2.14.1",
+    "seconds": 19.3
+  },
+  "n_prompts": 1536,
+  "layers": {
+    "last_L1": {
+      "within_A": 1.0,
+      "within_B": 0.9844,
+      "transfer_A_to_B": 0.6328,
+      "transfer_B_to_A": 0.5078,
+      "transfer_mean": 0.5703
+    },
+    "last_L2": {
+      "within_A": 1.0,
+      "within_B": 0.9896,
+      "transfer_A_to_B": 0.6029,
+      "transfer_B_to_A": 0.5013,
+      "transfer_mean": 0.5521
+    },
+    "last_L3": {
+      "within_A": 0.9987,
+      "within_B": 0.9935,
+      "transfer_A_to_B": 0.6771,
+      "transfer_B_to_A": 0.5,
+      "transfer_mean": 0.5885
+    },
+    "last_L4": {
+      "within_A": 0.9961,
+      "within_B": 0.9974,
+      "transfer_A_to_B": 0.6185,
+      "transfer_B_to_A": 0.5,
+      "transfer_mean": 0.5592
+    },
+    "last_L5": {
+      "within_A": 0.9987,
+      "within_B": 0.9948,
+      "transfer_A_to_B": 0.7513,
+      "transfer_B_to_A": 0.8932,
+      "transfer_mean": 0.8223
+    },
+    "last_L6": {
+      "within_A": 0.9922,
+      "within_B": 0.9948,
+      "transfer_A_to_B": 0.7747,
+      "transfer_B_to_A": 0.8112,
+      "transfer_mean": 0.793
+    },
+    "last_L7": {
+      "within_A": 0.9974,
+      "within_B": 0.9935,
+      "transfer_A_to_B": 0.7721,
+      "transfer_B_to_A": 0.7096,
+      "transfer_mean": 0.7409
+    },
+    "last_L8": {
+      "within_A": 0.9987,
+      "within_B": 0.9948,
+      "transfer_A_to_B": 0.8073,
+      "transfer_B_to_A": 0.7188,
+      "transfer_mean": 0.763
+    },
+    "last_L9": {
+      "within_A": 1.0,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.7201,
+      "transfer_B_to_A": 0.6263,
+      "transfer_mean": 0.6732
+    },
+    "last_L10": {
+      "within_A": 1.0,
+      "within_B": 0.9987,
+      "transfer_A_to_B": 0.7305,
+      "transfer_B_to_A": 0.5716,
+      "transfer_mean": 0.651
+    },
+    "last_L11": {
+      "within_A": 1.0,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.7331,
+      "transfer_B_to_A": 0.9023,
+      "transfer_mean": 0.8177
+    },
+    "last_L12": {
+      "within_A": 0.9987,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.7891,
+      "transfer_B_to_A": 0.8424,
+      "transfer_mean": 0.8158
+    },
+    "last_L13": {
+      "within_A": 1.0,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.7643,
+      "transfer_B_to_A": 0.8971,
+      "transfer_mean": 0.8307
+    },
+    "last_L14": {
+      "within_A": 0.9987,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.7969,
+      "transfer_B_to_A": 0.9036,
+      "transfer_mean": 0.8503
+    },
+    "last_L15": {
+      "within_A": 0.9974,
+      "within_B": 1.0,
+      "transfer_A_to_B": 0.8021,
+      "transfer_B_to_A": 0.8763,
+      "transfer_mean": 0.8392
+    },
+    "last_L16": {
+      "within_A": 0.9961,
+      "within_B": 0.9987,
+      "transfer_A_to_B": 0.8854,
+      "transfer_B_to_A": 0.9167,
+      "transfer_mean": 0.901
+    },
+    "last_L17": {
+      "within_A": 0.9922,
+      "within_B": 0.9857,
+      "transfer_A_to_B": 0.8398,
+      "transfer_B_to_A": 0.8815,
+      "transfer_mean": 0.8607
+    },
+    "last_L18": {
+      "within_A": 0.9909,
+      "within_B": 0.9818,
+      "transfer_A_to_B": 0.8411,
+      "transfer_B_to_A": 0.8854,
+      "transfer_mean": 0.8633
+    },
+    "last_L19": {
+      "within_A": 0.9948,
+      "within_B": 0.9831,
+      "transfer_A_to_B": 0.849,
+      "transfer_B_to_A": 0.9115,
+      "transfer_mean": 0.8802
+    },
+    "last_L20": {
+      "within_A": 0.9896,
+      "within_B": 0.9844,
+      "transfer_A_to_B": 0.8346,
+      "transfer_B_to_A": 0.8776,
+      "transfer_mean": 0.8561
+    },
+    "last_L21": {
+      "within_A": 0.9883,
+      "within_B": 0.9805,
+      "transfer_A_to_B": 0.8724,
+      "transfer_B_to_A": 0.901,
+      "transfer_mean": 0.8867
+    },
+    "last_L22": {
+      "within_A": 0.9909,
+      "within_B": 0.987,
+      "transfer_A_to_B": 0.9036,
+      "transfer_B_to_A": 0.9674,
+      "transfer_mean": 0.9355
+    },
+    "last_L23": {
+      "within_A": 0.9883,
+      "within_B": 0.9909,
+      "transfer_A_to_B": 0.9049,
+      "transfer_B_to_A": 0.9531,
+      "transfer_mean": 0.929
+    },
+    "last_L24": {
+      "within_A": 0.9909,
+      "within_B": 0.9922,
+      "transfer_A_to_B": 0.8919,
+      "transfer_B_to_A": 0.9271,
+      "transfer_mean": 0.9095
+    },
+    "mean_L1": {
+      "within_A": 0.9922,
+      "within_B": 0.9896,
+      "transfer_A_to_B": 0.8672,
+      "transfer_B_to_A": 0.7422,
+      "transfer_mean": 0.8047
+    },
+    "mean_L2": {
+      "within_A": 0.9896,
+      "within_B": 0.9831,
+      "transfer_A_to_B": 0.8841,
+      "transfer_B_to_A": 0.9362,
+      "transfer_mean": 0.9102
+    },
+    "mean_L3": {
+      "within_A": 0.9857,
+      "within_B": 0.987,
+      "transfer_A_to_B": 0.862,
+      "transfer_B_to_A": 0.9401,
+      "transfer_mean": 0.901
+    },
+    "mean_L4": {
+      "within_A": 0.9831,
+      "within_B": 0.9883,
+      "transfer_A_to_B": 0.862,
+      "transfer_B_to_A": 0.9232,
+      "transfer_mean": 0.8926
+    },
+    "mean_L5": {
+      "within_A": 0.9674,
+      "within_B": 0.974,
+      "transfer_A_to_B": 0.8815,
+      "transfer_B_to_A": 0.8424,
+      "transfer_mean": 0.862
+    },
+    "mean_L6": {
+      "within_A": 0.9635,
+      "within_B": 0.9753,
+      "transfer_A_to_B": 0.8971,
+      "transfer_B_to_A": 0.9323,
+      "transfer_mean": 0.9147
+    },
+    "mean_L7": {
+      "within_A": 0.9622,
+      "within_B": 0.9883,
+      "transfer_A_to_B": 0.9154,
+      "transfer_B_to_A": 0.9479,
+      "transfer_mean": 0.9316
+    },
+    "mean_L8": {
+      "within_A": 0.9622,
+      "within_B": 0.9831,
+      "transfer_A_to_B": 0.8945,
+      "transfer_B_to_A": 0.9518,
+      "transfer_mean": 0.9232
+    },
+    "mean_L9": {
+      "within_A": 0.9714,
+      "within_B": 0.9753,
+      "transfer_A_to_B": 0.8789,
+      "transfer_B_to_A": 0.974,
+      "transfer_mean": 0.9264
+    },
+    "mean_L10": {
+      "within_A": 0.9609,
+      "within_B": 0.9792,
+      "transfer_A_to_B": 0.8021,
+      "transfer_B_to_A": 0.9531,
+      "transfer_mean": 0.8776
+    },
+    "mean_L11": {
+      "within_A": 0.9701,
+      "within_B": 0.9896,
+      "transfer_A_to_B": 0.8607,
+      "transfer_B_to_A": 0.9336,
+      "transfer_mean": 0.8971
+    },
+    "mean_L12": {
+      "within_A": 0.974,
+      "within_B": 0.9883,
+      "transfer_A_to_B": 0.8659,
+      "transfer_B_to_A": 0.9115,
+      "transfer_mean": 0.8887
+    },
+    "mean_L13": {
+      "within_A": 0.9609,
+      "within_B": 0.9831,
+      "transfer_A_to_B": 0.8229,
+      "transfer_B_to_A": 0.9076,
+      "transfer_mean": 0.8652
+    },
+    "mean_L14": {
+      "within_A": 0.9479,
+      "within_B": 0.9701,
+      "transfer_A_to_B": 0.8659,
+      "transfer_B_to_A": 0.931,
+      "transfer_mean": 0.8984
+    },
+    "mean_L15": {
+      "within_A": 0.9362,
+      "within_B": 0.9492,
+      "transfer_A_to_B": 0.9206,
+      "transfer_B_to_A": 0.9206,
+      "transfer_mean": 0.9206
+    },
+    "mean_L16": {
+      "within_A": 0.9518,
+      "within_B": 0.9596,
+      "transfer_A_to_B": 0.9505,
+      "transfer_B_to_A": 0.9401,
+      "transfer_mean": 0.9453
+    },
+    "mean_L17": {
+      "within_A": 0.9622,
+      "within_B": 0.9674,
+      "transfer_A_to_B": 0.9427,
+      "transfer_B_to_A": 0.9323,
+      "transfer_mean": 0.9375
+    },
+    "mean_L18": {
+      "within_A": 0.9557,
+      "within_B": 0.9714,
+      "transfer_A_to_B": 0.944,
+      "transfer_B_to_A": 0.931,
+      "transfer_mean": 0.9375
+    },
+    "mean_L19": {
+      "within_A": 0.9544,
+      "within_B": 0.9635,
+      "transfer_A_to_B": 0.9492,
+      "transfer_B_to_A": 0.9271,
+      "transfer_mean": 0.9382
+    },
+    "mean_L20": {
+      "within_A": 0.9518,
+      "within_B": 0.9622,
+      "transfer_A_to_B": 0.9596,
+      "transfer_B_to_A": 0.9271,
+      "transfer_mean": 0.9434
+    },
+    "mean_L21": {
+      "within_A": 0.9388,
+      "within_B": 0.9388,
+      "transfer_A_to_B": 0.9701,
+      "transfer_B_to_A": 0.8672,
+      "transfer_mean": 0.9186
+    },
+    "mean_L22": {
+      "within_A": 0.9245,
+      "within_B": 0.9193,
+      "transfer_A_to_B": 0.9609,
+      "transfer_B_to_A": 0.8711,
+      "transfer_mean": 0.916
+    },
+    "mean_L23": {
+      "within_A": 0.9219,
+      "within_B": 0.9102,
+      "transfer_A_to_B": 0.9792,
+      "transfer_B_to_A": 0.8841,
+      "transfer_mean": 0.9316
+    },
+    "mean_L24": {
+      "within_A": 0.918,
+      "within_B": 0.9141,
+      "transfer_A_to_B": 0.9531,
+      "transfer_B_to_A": 0.8034,
+      "transfer_mean": 0.8783
+    }
+  },
+  "best": {
+    "pool": "mean",
+    "layer": 16,
+    "transfer_mean": 0.9453,
+    "perm_null_mean": 0.5247,
+    "perm_null_95pct": 0.5482,
+    "perm_p": 0.005,
+    "n_perms": 200
+  },
+  "wonders": {
+    "order": [
+      "I1_Trust",
+      "I2_Authenticity",
+      "I3_Status",
+      "I4_Identity",
+      "I5_EnactedFidelity",
+      "I6_Quality",
+      "I7_ContextualPerf",
+      "I8_Narrative"
+    ],
+    "direction_cosine": [
+      [
+        1.0,
+        0.822,
+        0.767,
+        0.81,
+        0.78,
+        0.799,
+        0.788,
+        0.784
+      ],
+      [
+        0.822,
+        1.0,
+        0.792,
+        0.8,
+        0.765,
+        0.78,
+        0.776,
+        0.79
+      ],
+      [
+        0.767,
+        0.792,
+        1.0,
+        0.821,
+        0.753,
+        0.784,
+        0.778,
+        0.795
+      ],
+      [
+        0.81,
+        0.8,
+        0.821,
+        1.0,
+        0.794,
+        0.797,
+        0.788,
+        0.798
+      ],
+      [
+        0.78,
+        0.765,
+        0.753,
+        0.794,
+        1.0,
+        0.782,
+        0.749,
+        0.771
+      ],
+      [
+        0.799,
+        0.78,
+        0.784,
+        0.797,
+        0.782,
+        1.0,
+        0.811,
+        0.768
+      ],
+      [
+        0.788,
+        0.776,
+        0.778,
+        0.788,
+        0.749,
+        0.811,
+        1.0,
+        0.752
+      ],
+      [
+        0.784,
+        0.79,
+        0.795,
+        0.798,
+        0.771,
+        0.768,
+        0.752,
+        1.0
+      ]
+    ],
+    "cross_wonder_transfer_A_to_B": [
+      [
+        0.979,
+        0.854,
+        0.854,
+        0.844,
+        0.76,
+        0.76,
+        0.698,
+        0.802
+      ],
+      [
+        0.781,
+        1.0,
+        0.865,
+        0.865,
+        0.719,
+        0.812,
+        0.708,
+        0.812
+      ],
+      [
+        0.75,
+        0.708,
+        1.0,
+        0.812,
+        0.604,
+        0.76,
+        0.729,
+        0.771
+      ],
+      [
+        0.844,
+        0.854,
+        0.75,
+        1.0,
+        0.74,
+        0.771,
+        0.74,
+        0.854
+      ],
+      [
+        0.896,
+        0.75,
+        0.844,
+        0.833,
+        0.99,
+        0.667,
+        0.667,
+        0.802
+      ],
+      [
+        0.802,
+        0.844,
+        0.75,
+        0.896,
+        0.594,
+        1.0,
+        0.729,
+        0.792
+      ],
+      [
+        0.844,
+        0.802,
+        0.885,
+        0.854,
+        0.729,
+        0.844,
+        0.99,
+        0.781
+      ],
+      [
+        0.823,
+        0.729,
+        0.771,
+        0.812,
+        0.75,
+        0.771,
+        0.677,
+        0.979
+      ]
+    ]
+  }
+}

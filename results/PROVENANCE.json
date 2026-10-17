@@ -1,9 +1,9 @@
 {
-  "generated_utc": "2026-10-17T09:16:00+00:00",
-  "git_commit": "a637238f134a57400f783456227a85139ed12538",
+  "generated_utc": "2026-10-17T10:47:39+00:00",
+  "git_commit": "97139568dfc0cc644e0f73a712837a9848b5b96e",
   "git_dirty": true,
   "python": "3.13.16",
-  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
   "seeds": {
     "permutation_null": 0,
     "tiny_random_model": 0
@@ -12,8 +12,17 @@
     "data/prompts_v2.csv": "edc39cd168ba9523d9324b1bfa7946f83ccaff94ce5654f7f1c3a4091c59bf49",
     "data/prompts_v3.jsonl": "f59833c7bb5bb0d2f3c8cd785aadda367e045f97668fdf6ba4055a506152beec",
     "requirements.txt": "2871d996c8c70b6a1e968a5aee6d0fa3850f832d39b878c0a595aaa1ecfa1032",
-    "results/acts_tiny.npz": "1b8fbbe66f802ed9bc96d397f6416f8036614032b7b2b76cd5f12b360d6cb8eb",
+    "results/acts_qwen05b.npz": "567621efbc575a50eff4c85d86ac8d87d8314b816dfa3dcb1cf3f6a938a885e4",
+    "results/acts_qwen15b.npz": "e9753469dd5bf22be45fc409027dc9646281f2e5d55437e2a66e3f8f391c8ba4",
+    "results/acts_qwen7b.npz": "4f52f446c630949e9071f288385dffa61e5e33101ad1d40df25f0aa98178dc7e",
+    "results/acts_tiny.npz": "87cca62669ff6a9462e39a03b730f96bb05c0e0ce89bf08a65591fb7e2b5e21f",
     "results/lexical_baseline.json": "439c135c1a990ebf53d7fd2940327d927ff4004dd25704ebfbb8fe4973b73814",
+    "results/probe_qwen05b.png": "28d9cbc4b2a40d86d91030479775a0dc6e679237348ec99f081e06e26750e433",
+    "results/probe_qwen15b.png": "fdba367ef54468b5a4a1b3c5e8f7b59d2d777c9fe77117582d7d113f2e21ed0f",
+    "results/probe_qwen7b.png": "00c27b32e7413d772e5f830feca56fb8bcd23867693c8a08ffc2781aa34762a4",
+    "results/probe_results_qwen05b.json": "cb64d15ec74b813913a0d71ef60348766965f5ed8909fa5a2028ab55c507fdb6",
+    "results/probe_results_qwen15b.json": "6b728117ca5082fb817bfc31018fee6d9f69b405d220866ac92a60234c08944b",
+    "results/probe_results_qwen7b.json": "179c2c39a62296acc268404c30f1691f8779951049e4075a946c55d6180367be",
     "results/probe_results_tiny.json": "2ee2db71fbbe93965f364bafc170c4489875d355cccf0bec4b52d82e7fd649ec",
     "results/probe_tiny.png": "51569fd6b3d6c7c49d5e02910277faecfc82598c6edfddb72c348d4e64eafc3c"
   }
