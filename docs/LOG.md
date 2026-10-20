@@ -4,6 +4,7 @@ Newest first.
 
 | Date | Type | Entry |
 |---|---|---|
+| 2026-10-20 | Result | Steering null over 40 random directions (Codex run on Corey's Mac, a89c0be): Frontin' p = 0.317 / 0.073 / 0.463 (0.5B / 1.5B / 7B); no causal effect shown. 1.5B moves the neutral question more than random (p = 0.024), an off-target effect. Written up in RESULTS.md section 6 by Claude; README title now names Black shopping. |
 | 2026-10-17 | Build | v0.2.1: steering null over 40 random directions (`--n-random`, `scripts/run_steer_null_mac.sh`); `scripts/summarize.py` generates `results/SUMMARY.md`; results consistency test. |
 | 2026-10-17 | Interpretation | Claude verified v0.2.0 numbers against the JSONs and wrote RESULTS.md sections 5–7. Probes: strong, scale-dependent. Steering: inconclusive (one random direction; off-target movement). Behavioral misreading: 0/24 in forced choice. Monitor (7B): 0.93 / 0.92 correct on held-out framings. |
 | 2026-10-17 | Result | v0.2.0 runs by Codex on Corey's Mac (MPS): transfer 0.812 / 0.8479 / 0.9209 for 0.5B / 1.5B / 7B, max-stat p = 0.001 each; extraction 44 / 142 / 562 s. Commit da499df. |

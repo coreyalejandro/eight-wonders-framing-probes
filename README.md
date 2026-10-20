@@ -1,4 +1,4 @@
-# Eight Wonders Framing Probes
+# Eight Wonders of Black Shopping: Framing Probes
 
 **Question:** When a language model reads a culturally specific consumer scenario, does it internally represent *how* the scenario is framed — relational (trust, obligation, belonging) versus transactional (price, demand, margin)? Is that one direction in activation space, or eight, one per Wonder of Black Shopping?
 
@@ -16,7 +16,7 @@ Research loop: problem (AHI, from lived and narrative experience) → research (
 | Statistics corrected for template dependence and layer selection | Done: max-statistic permutation test over template pairs |
 | Negative control (untrained model) | Done: not significant (p ≈ 0.07) |
 | Real-model probes (Qwen2.5 0.5B / 1.5B / 7B) | Done: cross-family transfer 0.81 / 0.85 / 0.92, p = 0.001, 16/16 template pairs; see RESULTS.md |
-| Steering test on Frontin' vignettes | Run: inconclusive with one random direction; 40-direction null added in v0.2.1, run pending |
+| Steering test on Frontin' vignettes | Run against 40 random directions: no causal effect shown (p = 0.32, 0.07, 0.46); see RESULTS.md section 6 |
 | TLC runtime monitor (ConstitutionalInvariant `EW-FRAME-001`) | Calibrated: 7B sorts held-out framings 92–93% correctly, HALT precision 0.94; evidence chains intact |
 
 ## The research loop

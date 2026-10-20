@@ -18,3 +18,15 @@ def test_results_md_quotes_committed_numbers(tag):
     m = json.load(open(f"results/monitor_{tag}.json"))
     for v in (m["familyB_relational"]["SATISFIED"], m["familyB_transactional"]["VIOLATED"], m["familyB_halt_precision"]):
         assert str(v) in txt
+
+
+@pytest.mark.parametrize("tag", TAGS)
+def test_results_md_quotes_steering_null(tag):
+    p = f"results/steering_{tag}.json"
+    if not os.path.exists(p):
+        pytest.skip("model results not present")
+    n = json.load(open(p)).get("random_null")
+    if not n:
+        pytest.skip("no steering null in this result file")
+    txt = open("RESULTS.md", encoding="utf-8").read()
+    assert str(n["frontin_p_two_sided"]) in txt and str(n["probe_frontin_slope"]) in txt

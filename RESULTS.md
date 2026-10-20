@@ -74,7 +74,20 @@ explicit forced-choice format, the misreading AHI predicts did not appear.
 random direction did for 0.5B and 1.5B, but less for 7B, and it also moved the unrelated neutral question (for 1.5B
 nearly as much). No setting flipped any answer to the theft-risk reading. With a single random direction there is no
 null distribution, so v0.2.1 compares the framing direction against 40 random directions (`scripts/run_steer_null_mac.sh`).
-Until that runs, no causal claim is made.
+
+**Steering null (v0.2.1, 40 random directions of equal norm, seeds 1000–1039): no causal effect shown.** The p-value is
+the share of random directions that move the answer at least as much as the framing direction (smallest possible 1/41).
+
+| Model | Frontin' slope, framing direction | Frontin' p | Neutral-question slope | Neutral p |
+|---|---|---|---|---|
+| Qwen2.5-0.5B | 1.5218 | 0.3171 | -0.2083 | 0.6341 |
+| Qwen2.5-1.5B | 2.3193 | 0.0732 | -1.8034 | 0.0244 |
+| Qwen2.5-7B | -1.2207 | 0.4634 | -0.9147 | 0.122 |
+
+The framing direction does not move Frontin' answers more than random directions do in any model. In 1.5B it moves the
+unrelated neutral question more than random directions (p = 0.024), which is an off-target effect, not evidence about
+Frontin'. The direction is readable (sections 4–5) and usable for monitoring (section 7), but this test gives no
+evidence that it causally controls how the model reads the scenario.
 
 ## 7. Runtime monitor (TLC invariant EW-FRAME-001)
 
