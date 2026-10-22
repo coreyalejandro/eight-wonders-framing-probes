@@ -2,11 +2,11 @@
 
 **Question:** When a language model reads a culturally specific consumer scenario, does it internally represent *how* the scenario is framed — relational (trust, obligation, belonging) versus transactional (price, demand, margin)? Is that one direction in activation space, or eight, one per Wonder of Black Shopping?
 
-This is the empirical layer of the research program on **Algorithmic Hermeneutical Injustice** (AHI): models misreading relational behavior as transactional. If framing is readable from activations, it can be monitored at runtime by **The Living Constitution** (TLC).
+This is the empirical layer of the research program on **Algorithmic Hermeneutical Injustice** (AHI): models misreading relational behavior as transactional. If framing is readable from activations, it can be monitored at runtime by **[The Living Constitution 2.0](https://github.com/coreyalejandro/the-living-constitution-2.0)** (TLC), which re-runs this repository's results from a fresh clone.
 
 Research loop: problem (AHI, from lived and narrative experience) → research (this repo) → paper → runtime monitor in TLC.
 
-## Status (2026-10-17, v0.2.1)
+## Status (2026-10-20, v0.2.2)
 
 | Stage | Status |
 |---|---|
@@ -23,8 +23,8 @@ Research loop: problem (AHI, from lived and narrative experience) → research (
 
 1. **Problem:** Algorithmic Hermeneutical Injustice. Models read relational behavior (Frontin', defensive presentation management under retail surveillance) through a transactional or theft-risk lens.
 2. **Research:** Is relational vs. transactional framing a direction in the model's activations? (`src/probes.py`) Does pushing along it change how the model reads Frontin'? (`src/steer.py`)
-3. **Paper:** written from the committed results.
-4. **Solution:** `src/monitor.py` turns the validated direction into TLC invariant `EW-FRAME-001`. When a relational situation is read transactionally, it triggers TLC halt authority and asks for the narrative baseline. Every decision goes to a hash-chained evidence log.
+3. **Paper:** in preparation. The Eight Wonders of Black Shopping paper builds on these results.
+4. **Solution:** `src/monitor.py` turns the readable direction into TLC invariant `EW-FRAME-001`. When a relational situation is read transactionally, it triggers TLC halt authority and asks for the narrative baseline. Every decision goes to a hash-chained evidence log.
 
 ## Reproduce
 

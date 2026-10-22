@@ -110,12 +110,12 @@ cannot yet be called correct or false. That needs a labelled Frontin' set.
 
 ## V&T
 
-- **EXISTS:** v4 dataset, lexical controls, probe/steering/monitor pipeline, 15 passing tests, real-model results for
+- **EXISTS:** v4 dataset, lexical controls, probe/steering/monitor pipeline, 18 passing tests, real-model results for
   Qwen2.5 0.5B, 1.5B and 7B (probes, steering, monitor calibration and demo, hash-chained evidence logs).
 - **VERIFIED AGAINST:** fresh-clone `make reproduce`; GitHub Actions on the results commit; numbers above checked by
   Claude against `results/*.json` (2026-10-17) and enforced by `tests/test_results_consistency.py`.
 - **CLAIMED:** pretrained Qwen2.5 models linearly encode relational vs. transactional framing in a word-independent form,
   increasing with scale; a monitor built on it classifies held-out framings at 92–93% (7B).
-- **NOT CLAIMED:** that steering along the direction causally changes how models read Frontin' (inconclusive, v0.2.1
-  pending); that the models misread Frontin' as theft (0/24 in forced choice); that there is exactly one framing direction
+- **NOT CLAIMED:** that steering along the direction causally changes how models read Frontin' (the v0.2.1 test against 40 random
+  directions showed no causal effect); that the models misread Frontin' as theft (0/24 in forced choice); that there is exactly one framing direction
   rather than eight; any result beyond Qwen2.5.
